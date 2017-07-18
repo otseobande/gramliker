@@ -6,5 +6,13 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname,'dist'),
 		filename: 'popup.js'
+	},
+	module: {
+		loaders: [
+			{
+				test: /\.vue$/,
+				loader: 'vue-loader'
+			}
+		]
 	}
 }
