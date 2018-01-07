@@ -9,17 +9,26 @@
 		"default_popup": "./html/popup.html"
 	},
 
+	"background":{
+		//"scripts": ["./js/background.js"],
+		"page": "./html/background.html",
+		"persistent": true
+	
+
+	},
+
 	"permissions":[
+		"background",
 		"tabs",
 		"cookies",
 		"*://*.instagram.com/",
 		"alarms",
-	    "background",
 	    "power",
 	    "storage",
 	    "unlimitedStorage",
 	    "webRequest",
 	    "webRequestBlocking",
 		"*://*.instagram.com/"
+		
 	]
 }

@@ -1,3 +1,156 @@
-.container{
+@font-face {
+	font-family: 'Billabong';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Billabong'), url('fonts/Billabong.woff') format('woff');
+}
+
+html{
+	height: 500px !important;
+	width: 300px !important;
+}
+
+#app{
+}
+
+.form-space{
 	padding: 10px;
+	width: 250px;
+	top: 20px;
+}
+
+.task{
+	margin-bottom: 5px;
+}
+.taskbox-inner{
+	display: inline-block;
+}
+.taskbox-inner-switch{
+	display: inline-block; 
+	float: right;
+
+}
+
+.md-bottom-bar{
+	bottom: 0px;
+	position: absolute;
+}
+
+.logged-out{
+	width: 280px;
+	margin: auto;
+	text-align: center;
+}
+
+.logged-out > .md-whiteframe{
+	padding: 30px;
+	background-color: white;
+}
+.main-title{
+	font-family: "Billabong";
+	font-size: 50px;
+	text-align: center;
+	-webkit-margin-after: 20px;
+	margin-top: 0px;
+	padding-top: 40px;
+}
+
+@keyframes heart-beats {
+  0%   { transform: scale(1); background-color:black;}
+  7%  { transform: scale(1.2); }
+  12%  { transform: scale(1.1); }
+  20%  { transform: scale(1.3); }
+  60%  { transform: scale(1); }
+  100% { transform: scale(0.99); }
+}
+
+@-webkit-keyframes heart-beats {
+  0%  { -webkit-transform: scale(1); }
+  7%  { -webkit-transform: scale(1.2); }
+  12% { -webkit-transform: scale(1.1); }
+  20% { -webkit-transform: scale(1.3); }
+  60% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(0.99); }
+}
+
+.heart-shape {
+	display: block;
+	margin: auto;
+	position: relative;
+	width: 50px;
+	-webkit-margin-after: 50px;
+}
+
+.beat{
+	animation: heart-beats 3s infinite;
+	-webkit-animation: heart-beats 3s infinite;
+}
+
+.heart-shape:before,
+.heart-shape:after {
+   background: #f05952;
+   position: absolute;
+   width: 22px;
+   height: 35px;
+   top: 0;
+   left: 22px;
+   content: '';
+   border-radius: 50px 50px 0 0;
+   transform: rotate(-45deg) translateZ(0);
+   -webkit-transform: rotate(-45deg) translateZ(0);
+   transform-origin: 0 100%;
+   -webkit-transform-origin: 0 100%;
+}
+
+.heart-shape:after {
+   left: 0;
+   transform: rotate(45deg) translateZ(0);
+   -webkit-transform: rotate(45deg) translateZ(0);
+   transform-origin :100% 100%;
+   -webkit-transform-origin: 100% 100%;
+}
+
+.like-info{
+	text-align: center;
+}
+.pic{
+	height: 62px !important;
+	width: 62px !important;
+	margin: 5px !important;
+}
+
+.liked-images-section{
+	padding: 5px;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.img-container{
+	display: inline;
+}
+
+.inner-container{
+	margin: auto;
+}
+
+.loading{
+	padding-top: 60px;
+	text-align: center;
+	font-size: 40px;
+	font-family: "Billabong";
+}
+.container{
+	position: relative;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
