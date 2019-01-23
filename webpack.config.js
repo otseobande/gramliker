@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack')
-const BabiliPlugin = require("babili-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
@@ -13,7 +13,7 @@ module.exports = {
 		filename: '[name].js'
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.vue$/,
 				loader: 'vue-loader'
@@ -21,7 +21,14 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-			},
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      }
 		]
 	},
 
@@ -30,7 +37,8 @@ module.exports = {
 	      'process.env': {
 	        NODE_ENV: '"production"'
 	      }
-	    }),
+      }),
+      new VueLoaderPlugin(),
 	  ]
 }
 
